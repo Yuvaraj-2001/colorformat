@@ -93,20 +93,23 @@ function isValidColor(color) {
 }
 
 // Copy to clipboard function
-function copyToClipboard(text) {
+function copyToClipboard(text, id) {
     navigator.clipboard.writeText(text).then(function() {
-        alert('Color code copied to clipboard!');
+        document.getElementById(id).innerText = 'Copied';
+        setTimeout(() => {
+            document.getElementById(id).innerText = 'Copy';
+        }, 2000);
     }, function(err) {
         alert('Error copying text: ', err);
     });
 }
 
 // Copy buttons event listeners
-document.getElementById('copy-hex').addEventListener('click', () => copyToClipboard(hexCode.textContent));
-document.getElementById('copy-rgb').addEventListener('click', () => copyToClipboard(rgbCode.textContent));
-document.getElementById('copy-hsl').addEventListener('click', () => copyToClipboard(hslCode.textContent));
-document.getElementById('copy-rgba').addEventListener('click', () => copyToClipboard(rgbaCode.textContent));
-document.getElementById('copy-hsla').addEventListener('click', () => copyToClipboard(hslaCode.textContent));
+document.getElementById('copy-hex').addEventListener('click', () => copyToClipboard(hexCode.textContent, 'copy-hex'));
+document.getElementById('copy-rgb').addEventListener('click', () => copyToClipboard(rgbCode.textContent, 'copy-rgb'));
+document.getElementById('copy-hsl').addEventListener('click', () => copyToClipboard(hslCode.textContent, 'copy-hsl'));
+document.getElementById('copy-rgba').addEventListener('click', () => copyToClipboard(rgbaCode.textContent, 'copy-rgba'));
+document.getElementById('copy-hsla').addEventListener('click', () => copyToClipboard(hslaCode.textContent, 'copy-hsla'));
 
 // Toggle Dark Mode
 function toggleDarkMode() {
