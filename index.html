@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker and Copier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Color Picker & Copier</h1>
+            <button id="toggle-theme">🌑  Switch to Light Mode</button>
+        </header>
+        
+        <!-- Color Picker -->
+        <div class="color-picker">
+            <label for="color-picker">Pick a color:</label>
+            <input type="color" id="color-picker" name="color-picker">
+        </div>
+        
+        <!-- Input to Paste Color -->
+        <div class="paste-color">
+            <label for="paste-color">Paste a color code:</label>
+            <input type="text" id="paste-color" placeholder="#ffffff">
+        </div>
+
+        <!-- Color Display -->
+        <div class="result">
+            <p>Selected Color:</p>
+            <div id="color-box" class="color-box"></div>
+            
+            <div class="formats">
+                <div>
+                    <strong>HEX:</strong>
+                    <span id="hex-code">#ffffff</span>
+                    <button class="copy-btn" id="copy-hex">Copy</button>
+                </div>
+                <div>
+                    <strong>RGB:</strong>
+                    <span id="rgb-code">rgb(255, 255, 255)</span>
+                    <button class="copy-btn" id="copy-rgb">Copy</button>
+                </div>
+                <div>
+                    <strong>HSL:</strong>
+                    <span id="hsl-code">hsl(0, 0%, 100%)</span>
+                    <button class="copy-btn" id="copy-hsl">Copy</button>
+                </div>
+                <div>
+                    <strong>RGBA:</strong>
+                    <span id="rgba-code">rgba(255, 255, 255, 1)</span>
+                    <button class="copy-btn" id="copy-rgba">Copy</button>
+                </div>
+                <div>
+                    <strong>HSLA:</strong>
+                    <span id="hsla-code">hsla(0, 0%, 100%, 1)</span>
+                    <button class="copy-btn" id="copy-hsla">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

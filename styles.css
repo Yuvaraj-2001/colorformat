@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;  /* Light background */
+    color: #000000;  /* Black text color */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode {
+    background-color: #1f2937;  /* Dark mode background color */
+    color: #ffffff;  /* White text for dark mode */
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #fff;  /* White background for container */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    transition: background-color 0.3s;
+    max-width: 100%;
+    margin: 0 10px;
+  }
+  
+  body.dark-mode .container {
+    background-color: #333;  /* Dark background for container in dark mode */
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #a855f7;  /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+  }
+  
+  button:hover {
+    background-color: #8b4bf7; /* Hover state for button */
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+  button#toggle-theme {
+    background-color: #a855f7;  /* Same button color for theme toggle */
+    color: white;
+  }
+  
+  button#toggle-theme:hover {
+    background-color: #8b4bf7;
+  }
+  
+  .color-picker,
+  .paste-color {
+    margin-bottom: 20px;
+  }
+  
+  input[type="color"],
+  input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    transition: border 0.3s;
+  }
+  
+  input[type="color"]:focus,
+  input[type="text"]:focus {
+    border-color: #4CAF50;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  
+  .color-box {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+  }
+  
+  .formats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .formats div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  button.copy-btn {
+    background-color: #a855f7; /* Button color */
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  button.copy-btn:hover {
+    background-color: #8b4bf7;
+  }
+  
+  button.copy-btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* Dark mode improvements */
+  body.dark-mode input[type="color"],
+  body.dark-mode input[type="text"] {
+    background-color: #555;
+    color: #e0e0e0;
+    border-color: #444;
+  }
+  
+  body.dark-mode button.copy-btn {
+    background-color: #a855f7; /* Button color */
+    color: white;
+  }
+  
+  body.dark-mode button.copy-btn:hover {
+    background-color: #8b4bf7;
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 480px) {
+    .container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    button {
+      font-size: 12px;
+    }
+  
+    .color-picker,
+    .paste-color {
+      margin-bottom: 15px;
+    }
+  
+    .formats div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    button.copy-btn {
+      margin-top: 5px;
+    }
+  }
+  
+  /* Larger Screen Adjustments */
+  @media (min-width: 1024px) {
+    .container {
+      width: 50%;
+      max-width: 700px;
+    }
+  
+    .color-picker,
+    .paste-color {
+      margin-bottom: 25px;
+    }
+  
+    .formats div {
+      justify-content: space-between;
+    }
+  
+    button.copy-btn {
+      padding: 7px 15px;
+    }
+  
+    header {
+      margin-bottom: 30px;
+    }
+  }
+  
